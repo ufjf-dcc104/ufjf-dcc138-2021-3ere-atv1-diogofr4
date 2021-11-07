@@ -14,11 +14,16 @@
          var canvas = document.querySelector("canvas");
          var ctx = canvas.getContext("2d");
          var x = 250;
+         var t0;
+         var dt;
          canvas.width = 480;
          canvas.height = 320; 
-         desenha();
+         requestAnimationFrame(desenha);
         
-         function desenha(){
+         function desenha(t){
+            t0 = t0 ?? t;
+            dt = (t - t0)/1000;
+
             //Desenha fundo
             ctx.fillStyle = "black";   
             ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -26,6 +31,9 @@
             //Desenha elementos
             ctx.fillStyle = "white";   
             ctx.fillRect(x, 150, 20, 20);
+
+            requestAnimationFrame(desenha);
+            t0 = t;
          }
          
      </script>
