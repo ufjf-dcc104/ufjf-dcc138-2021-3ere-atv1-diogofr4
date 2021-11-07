@@ -9,12 +9,14 @@
 <body>
     <h1>DCC138 Exemplo01</h1>
      <canvas></canvas>
+     <p>por Diogo Freitas de Andrade (2021)</p>
 
      <script>
          var canvas = document.querySelector("canvas");
          var ctx = canvas.getContext("2d");
          var x = 250;
          var y = 100;
+         var a = 0;
          var t0;
          var dt;
          canvas.width = 480;
@@ -30,8 +32,9 @@
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             //Atualiza estado
-            x = x + 10*dt;
-            y = 100 + 1500 * Math.cos(t/200) * dt;
+            x = x + 10 * dt;
+            a = a + 2 * Math.PI * dt;
+            y = 100 + 100 * Math.cos(a);
             
             //Desenha elementos
             ctx.fillStyle = "white";   
