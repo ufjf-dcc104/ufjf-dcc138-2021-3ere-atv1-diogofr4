@@ -13,11 +13,21 @@
      <script>
          var canvas = document.querySelector("canvas");
          var ctx = canvas.getContext("2d");
+         var x = 250;
          canvas.width = 480;
          canvas.height = 320; 
+         desenha();
         
-         ctx.fillStyle = "black";   
-         ctx.fillRect(0, 0, canvas.width, canvas.height);
+         function desenha(){
+            //Desenha fundo
+            ctx.fillStyle = "black";   
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            //Desenha elementos
+            ctx.fillStyle = "white";   
+            ctx.fillRect(x, 150, 20, 20);
+         }
+         
      </script>
 </body>
 </html>
